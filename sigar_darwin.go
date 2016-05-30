@@ -183,6 +183,7 @@ func (self *FileSystemList) Get() error {
 		fs.DirName = bytePtrToString(&buf[i].Mntonname[0])
 		fs.DevName = bytePtrToString(&buf[i].Mntfromname[0])
 		fs.SysTypeName = bytePtrToString(&buf[i].Fstypename[0])
+		fs.Flags = buf[i].Flags
 
 		fslist = append(fslist, fs)
 	}
